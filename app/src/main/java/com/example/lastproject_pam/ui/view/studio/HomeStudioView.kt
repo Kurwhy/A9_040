@@ -95,10 +95,19 @@ fun HomeScreenStudio(
         floatingActionButton = {
             FloatingActionButton(
                 onClick = navigateToltemEntry,
-                shape = MaterialTheme.shapes.medium,
-                modifier = Modifier.padding(18.dp)
-            ){
-                Icon(imageVector = Icons.Default.Add, contentDescription = "Add Studio")
+                shape = MaterialTheme.shapes.large,
+                modifier = Modifier
+                    .padding(18.dp)
+                    .size(50.dp)
+                    .shadow(elevation = 6.dp, shape = MaterialTheme.shapes.medium),
+                containerColor = MaterialTheme.colorScheme.tertiary,
+                contentColor = MaterialTheme.colorScheme.onPrimary
+            ) {
+                Icon(
+                    imageVector = Icons.Default.Add,
+                    contentDescription = "Add Studio",
+                    modifier = Modifier.size(30.dp)
+                )
             }
         },
         bottomBar = {
@@ -330,11 +339,11 @@ fun StudioCard(
             verticalAlignment = Alignment.CenterVertically
         ) {
             Image(
-                painter = painterResource(R.drawable.movie),
+                painter = painterResource(R.drawable.theater),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
-                    .size(100.dp)
+                    .size(50.dp)
                     .aspectRatio(1f)
                     .clip(RoundedCornerShape(8.dp))
             )
